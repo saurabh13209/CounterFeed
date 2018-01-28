@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.saurabh.hackathon18.AboutAppActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="30dp"
+                android:src="@drawable/counterfeed_androicon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="20dp"
+                android:text="As the name says “CounterFeed” The app is focused on revealing the authenticity of the news and online content. The
+main features are polling, comments which are obtained by the users and this
+will help determine if the news is real or fake. Any user can upload an image,
+description, link or location of the news and can post that in the public feed,
+while if any user knows if it’s a real or fake, they can vote it and make a
+comment. There is also a login system in the app in which the history of the
+user is stored, it also has an anonymously news uploading feature. If any news
+gets too many hits and it will appear in the trending section."
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

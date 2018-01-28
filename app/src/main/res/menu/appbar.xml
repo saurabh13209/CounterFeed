@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@mipmap/ic_action_home"
+        android:id="@+id/Home"
+        android:title="Home"
+        app:showAsAction="never" />
+
+
+    <item
+        android:icon="@mipmap/ic_action_trend"
+        android:id="@+id/Trending"
+        android:title="Trending"
+        app:showAsAction="never" />
+
+
+
+    <item android:id="@+id/AppInfo"
+        android:title="App Info"
+        android:icon="@mipmap/ic_action_info"
+        />
+
+    <item
+        android:icon="@mipmap/ic_action_group"
+        android:id="@+id/AboutUs"
+        android:title="About us"
+        app:showAsAction="never" />
+
+
+
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4C5C76</color>
+    <color name="colorPrimaryDark">#22334A</color>
+    <color name="colorAccent">#11AAFF</color>
+    <color name="NavigationTop">#13181B</color>
+    <color name="NavigationList">#343B43</color>
+    <color name="NavigationIcon">#DBD052</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="FakeClick">#FF4342</color>
+    <color name="Fake">#B6252B</color>
+
+    <color name="RealClick">#97Cf00</color>
+    <color name="Real">#80A228</color>
+</resources>

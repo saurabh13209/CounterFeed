@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/CommentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saurabh"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/CommentDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="22.0.25"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/CommentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Comen"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
