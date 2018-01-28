@@ -61,6 +61,38 @@ public class MainActivity extends AppCompatActivity {
         up = new ArrayList<>();
         down = new ArrayList<>();
 
+        if (shareHolder.getId().equals("")) {
+            progressDialog.show();
+            StringRequest AndroidId = new StringRequest(Request.Method.POST, "https://crummy-stuff.000webhostapp.com/Fake/CreateUser.php", new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONArray array = new JSONArray(response);
+                        shareHolder.setId(array.getString(0));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    progressDialog.dismiss();
+                    getInfo("https://crummy-stuff.000webhostapp.com/Fake/getData.php");
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map map = new HashMap();
+                    map.put("Android", Settings.Secure.getString(MainActivity.this.getContentResolver(), Settings.Secure.ANDROID_ID));
+                    return map;
+                }
+            };
+            MySending.getInstance(MainActivity.this).addToRequestQueue(AndroidId);
+        } else {
+            getInfo("https://crummy-stuff.000webhostapp.com/Fake/getData.php");
+        }
+
         super.onResume();
     }
 
@@ -94,40 +126,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         navigationView = findViewById(R.id.navigation);
         NewsFeed = findViewById(R.id.MainFeed);
-
-
-
-        if (shareHolder.getId().equals("")) {
-            progressDialog.show();
-            StringRequest AndroidId = new StringRequest(Request.Method.POST, "https://crummy-stuff.000webhostapp.com/Fake/CreateUser.php", new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONArray array = new JSONArray(response);
-                        shareHolder.setId(array.getString(0));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    progressDialog.dismiss();
-                    getInfo("https://crummy-stuff.000webhostapp.com/Fake/getData.php");
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map map = new HashMap();
-                    map.put("Android", Settings.Secure.getString(MainActivity.this.getContentResolver(), Settings.Secure.ANDROID_ID));
-                    return map;
-                }
-            };
-            MySending.getInstance(MainActivity.this).addToRequestQueue(AndroidId);
-        } else {
-            getInfo("https://crummy-stuff.000webhostapp.com/Fake/getData.php");
-        }
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
